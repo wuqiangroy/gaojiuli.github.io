@@ -2,6 +2,7 @@
 layout: post
 title:  "我的API开发规范"
 tags: 后端
+categories: 后端
 ---
 
 > 想要缩短开发周期，提高开发效率，一套稳定可靠的规范是必不可少的。
@@ -24,7 +25,7 @@ tags: 后端
 GET /resources/:id/?limit={数量}&
                     offset={偏移量}&
                     search={查询关键词}&
-                    condition1={过滤条件1}&
+					condition1={过滤条件1}&
 					condition2={过滤条件2}&
                     fields=返回字段1,返回字段2
 ```
