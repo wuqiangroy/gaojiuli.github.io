@@ -11,10 +11,10 @@ categories: 后端
 
 ```python
 """
-列表		GET     /resources/
-详情		GET     /resources/:id/
+列表		GET         /resources/
+详情		GET         /resources/:id/
 创建		POST        /resources/:id/
-替换		PUT     /resources/:id/
+替换		PUT         /resources/:id/
 更新		PATCH       /resources/:id/
 删除		DELETE      /resources/:id/
 选项		OPTIONS     /resources/:id/
