@@ -60,14 +60,14 @@ layout: page
 
 ### 开源项目
 
-- Gain
+- [Gain]: https://github.com/gaojiuli/gain
   - 一款简单易用的爬虫框架
   - 基于asyncio实现高并发
   - 使用aiohttp实现异步请求
-- Tomd
+- [Tomd]: https://github.com/gaojiuli/tomd
   - 一款HTML转Markdown的库
   - 主要依赖正则表达式进行HTML匹配与解析
-- Xweb
+- [Xweb]: https://github.com/gaojiuli/xweb
   - 使用WSGI实现简单后端框架
   - 无第三方依赖
   - 使用TravisCI做持续集成
@@ -86,8 +86,8 @@ layout: page
 
 ## 常用技能
 
-- 编程语言: Python、Shell、Nodejs、Golang
-- 框架: Django、Flask、Express
+- 编程语言: Python、Shell、Nodejs、Java
+- 框架: Django、Flask、Express、Spring Boot
 - 接口: Socket、RESTful、JSON
 - 测试: Pytest、Unittest、Tox
 - 数据库: MySQL、PostgreSQL
