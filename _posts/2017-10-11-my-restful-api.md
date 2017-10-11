@@ -9,7 +9,8 @@ categories: 后端
 
 ## 请求方法
 
-```ruby
+```python
+"""
 列表		GET			/resources/
 详情		GET			/resources/:id/
 创建		POST		/resources/:id/
@@ -17,17 +18,20 @@ categories: 后端
 更新		PATCH		/resources/:id/
 删除		DELETE		/resources/:id/
 选项		OPTIONS		/resources/:id/
+"""
 ```
 
 ## 分页过滤
 
-```css
+```python
+"""
 GET /resources/:id/?limit={数量}&
                     offset={偏移量}&
                     search={查询关键词}&
 					condition1={过滤条件1}&
 					condition2={过滤条件2}&
                     fields=返回字段1,返回字段2
+"""
 ```
 
 
@@ -56,7 +60,8 @@ GET /resources/:id/?limit={数量}&
 
 ## 返回状态
 
-```ruby
+```python
+"""
 200	请求成功
 201	创建成功
 400	参数错误
@@ -64,6 +69,7 @@ GET /resources/:id/?limit={数量}&
 403	无权限
 404	未找到
 50X	服务器错误
+"""
 ```
 
 ## 后端依赖
