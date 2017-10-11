@@ -84,7 +84,7 @@ layout: page
 
 ## 常用技能
 
-- 编程语言: Python、Shell、Nodejs、Java
+- 编程语言: Python、Kotlin、Javascript、Shell
 - 框架: Django、Flask、Express、Spring Boot
 - 接口: Socket、RESTful、JSON
 - 测试: Pytest、Unittest、Tox

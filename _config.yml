@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 
 # Site
-title: No Ｍeaning
+title: 高久力的个人网站
 subtitle:
 description:
 author: 高久力
@@ -78,7 +78,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "gaojiuli,Python开发工程师"
+keywords: "gaojiuli,高久力,Python开发工程师"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -117,11 +117,11 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories/
-  #about: /about/
+  categories: /categories/
   archives: /archives/
   tags: /tags/
   resume: /resume/
+  about: /about/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
