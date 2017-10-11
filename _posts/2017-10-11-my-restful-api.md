@@ -11,13 +11,13 @@ categories: 后端
 
 ```python
 """
-列表		GET			/resources/
-详情		GET			/resources/:id/
-创建		POST		/resources/:id/
-替换		PUT			/resources/:id/
-更新		PATCH		/resources/:id/
-删除		DELETE		/resources/:id/
-选项		OPTIONS		/resources/:id/
+列表		GET     /resources/
+详情		GET     /resources/:id/
+创建		POST        /resources/:id/
+替换		PUT     /resources/:id/
+更新		PATCH       /resources/:id/
+删除		DELETE      /resources/:id/
+选项		OPTIONS     /resources/:id/
 """
 ```
 
@@ -28,8 +28,8 @@ categories: 后端
 GET /resources/:id/?limit={数量}&
                     offset={偏移量}&
                     search={查询关键词}&
-					condition1={过滤条件1}&
-					condition2={过滤条件2}&
+                    condition1={过滤条件1}&
+                    condition2={过滤条件2}&
                     fields=返回字段1,返回字段2
 """
 ```
