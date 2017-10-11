@@ -60,14 +60,14 @@ layout: page
 
 ### 开源项目
 
-- [Gain]: https://github.com/gaojiuli/gain
+- [Gain](https://github.com/gaojiuli/gain)
   - 一款简单易用的爬虫框架
   - 基于asyncio实现高并发
   - 使用aiohttp实现异步请求
-- [Tomd]: https://github.com/gaojiuli/tomd
+- [Tomd](https://github.com/gaojiuli/tomd)
   - 一款HTML转Markdown的库
   - 主要依赖正则表达式进行HTML匹配与解析
-- [Xweb]: https://github.com/gaojiuli/xweb
+- [Xweb](https://github.com/gaojiuli/xweb)
   - 使用WSGI实现简单后端框架
   - 无第三方依赖
   - 使用TravisCI做持续集成
