@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "我的API开发规范"
-categories: 后端
+tags: 后端
 ---
 
 > 想要缩短开发周期，提高开发效率，一套稳定可靠的规范是必不可少的。
