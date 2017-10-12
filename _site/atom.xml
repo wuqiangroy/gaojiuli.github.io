@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-12T22:06:11+08:00</updated><id>http://localhost:4000/</id><title type="html">高久力的个人网站</title><author><name>高久力</name></author><entry><title type="html">我的开发环境搭建</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/10/01/developer-environment-setting/" rel="alternate" type="text/html" title="我的开发环境搭建" /><published>2017-10-01T00:00:00+08:00</published><updated>2017-10-01T00:00:00+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/10/01/developer-environment-setting</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/10/01/developer-environment-setting/">&lt;blockquote&gt;
+  &lt;p&gt;工欲善其事，必先利其器。既好用又好看的开发环境不仅让人工作愉快，还能提高质量和效率。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;git&quot;&gt;Git&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install git
+
+sudo apt-get install git-flow
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;oh-my-zsh&quot;&gt;Oh My Zsh&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install zsh
+
+chsh -s $(which zsh)
+
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
+
+plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting last-working-dir git-flow)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;pyenv&quot;&gt;Pyenv&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev
+
+curl -fsSL https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+v=3.5.2 | wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;pyenv install $v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;pip加速&quot;&gt;Pip加速&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;md ~/.pip
+
+echo &quot;[global]
+trusted-host =  mirrors.aliyun.com
+index-url = http://mirrors.aliyun.com/pypi/simple&quot; &amp;gt; ~/.pip/pip.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;pycharm&quot;&gt;PyCharm&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;下载地址: &lt;a href=&quot;https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&quot;&gt;PyCharm&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;注册服务器: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://idea.iteblog.com/key.php&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;自动化脚本&quot;&gt;自动化脚本&lt;/h2&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Desktop
+apt install git
+apt install zsh
+chsh -s &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;which zsh&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+sh -c &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+
+&lt;span class=&quot;nb&quot;&gt;echo export&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'PATH=&quot;~/.pyenv/bin:$PATH&quot;
+eval &quot;$(pyenv init -)&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;'&lt;/span&gt;&amp;gt;&amp;gt;~/.zshrc
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[global]
+trusted-host =  mirrors.aliyun.com
+index-url = http://mirrors.aliyun.com/pypi/simple
+'&lt;/span&gt;&amp;gt;~/.pip/pip.conf
+
+&lt;span class=&quot;nv&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.6.2
+wget http://mirrors.sohu.com/python/&lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;/Python-&lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;.tar.xz -P ~/.pyenv/cache/;
+pyenv install &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export NVM_DIR=&quot;$HOME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;amp;&amp;amp; . &quot;$NVM_DIR/nvm.sh&quot;'&lt;/span&gt;&amp;gt;&amp;gt;~/.zshrc
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+
+
+wget https://download.jetbrains.com/python/pycharm-professional-2017.2.3.tar.gz -P ~/Desktop
+wget https://www.google.com/chrome/browser/?platform&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;linux&amp;amp;extra&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;devchannel -P ~/Desktop
+wget http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_amd64.deb -P ~/Desktop
+wget http://pinyin.sogou.com/linux/download.php?f&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;linux&amp;amp;bit&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;64 -P ~/Desktop
+git clone https://github.com/yurtaev/idea-one-dark-theme
+git clone https://github.com/anmoljagetia/Flatabulous
+
+apt remove libreoffice-common
+apt remove unity-webapps-common
+apt remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot
+apt remove onboard deja-dup
+
+apt install rar
+apt install unity-tweak-tool
+add-repository ppa:noobslab/icons
+apt update
+apt install ultra-flat-icons
+apt install fonts-wqy-microhei
+apt install vim
+apt install nginx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>高久力</name></author><category term="Python" /><summary type="html">工欲善其事，必先利其器。既好用又好看的开发环境不仅让人工作愉快，还能提高质量和效率。</summary></entry><entry><title type="html">我的API开发规范</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/07/23/my-restful-api/" rel="alternate" type="text/html" title="我的API开发规范" /><published>2017-07-23T00:00:00+08:00</published><updated>2017-07-23T00:00:00+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/07/23/my-restful-api</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/07/23/my-restful-api/">&lt;blockquote&gt;
+  &lt;p&gt;想要缩短开发周期，提高开发效率，一套稳定可靠的规范是必不可少的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;请求方法&quot;&gt;请求方法&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+列表		GET         /resources/
+详情		GET         /resources/:id/
+创建		POST        /resources/:id/
+替换		PUT         /resources/:id/
+更新		PATCH       /resources/:id/
+删除		DELETE      /resources/:id/
+选项		OPTIONS     /resources/:id/
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;分页过滤&quot;&gt;分页过滤&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+GET /resources/:id/?limit={数量}&amp;amp;
+                    offset={偏移量}&amp;amp;
+                    search={查询关键词}&amp;amp;
+                    condition1={过滤条件1}&amp;amp;
+                    condition2={过滤条件2}&amp;amp;
+                    fields=返回字段1,返回字段2
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;数据传输&quot;&gt;数据传输&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;普通数据&lt;/span&gt;	&lt;span class=&quot;s&quot;&gt;&quot;application/json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;文件上传&lt;/span&gt;	&lt;span class=&quot;s&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;时间格式&quot;&gt;时间格式&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;规范&lt;/span&gt;		&lt;span class=&quot;s&quot;&gt;&quot;ISO 8601&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;结构&lt;/span&gt;		&lt;span class=&quot;s&quot;&gt;&quot;YYYY-MM-DDTHH:MM:SSZ&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;案例&lt;/span&gt;		&lt;span class=&quot;s&quot;&gt;&quot;2017-09-05T08:23:51.464177Z&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;身份认证&quot;&gt;身份认证&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;软件&lt;/span&gt;		&lt;span class=&quot;s&quot;&gt;&quot;Authorization: token :TOKEN&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;网页&lt;/span&gt;		&lt;span class=&quot;s&quot;&gt;&quot;Cookie&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;返回状态&quot;&gt;返回状态&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+200	请求成功
+201	创建成功
+400	参数错误
+401	未登录
+403	无权限
+404	未找到
+50X	服务器错误
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;后端依赖&quot;&gt;后端依赖&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;django
+djangorestframework
+django-url-filter
+django-redis
+celery
+postgresql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;后端部署&quot;&gt;后端部署&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Ubuntu Server
+Nginx  &amp;lt;----&amp;gt; uWSGI &amp;lt;----&amp;gt; Django &amp;lt;----&amp;gt; Redis、PostgreSQL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>高久力</name></author><category term="后端" /><summary type="html">想要缩短开发周期，提高开发效率，一套稳定可靠的规范是必不可少的。</summary></entry></feed>
