@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-12T10:27:17+08:00</updated><id>http://localhost:4000/</id><title type="html">高久力的个人网站</title><author><name>高久力</name></author><entry><title type="html">我的开发环境搭建</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/10/01/developer-environment-setting/" rel="alternate" type="text/html" title="我的开发环境搭建" /><published>2017-10-01T00:00:00+08:00</published><updated>2017-10-01T00:00:00+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/10/01/developer-environment-setting</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/10/01/developer-environment-setting/">&gt;  工欲善其事，必先利其器。既好用又好看的开发环境不仅让人工作愉快，还能提高质量和效率。
+
+---
+
+## Git
+
+```
+sudo apt install git
+
+sudo apt-get install git-flow
+```
+
+## Oh My Zsh
+
+```
+sudo apt-get install zsh
+
+chsh -s $(which zsh)
+
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
+
+plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting last-working-dir git-flow)
+```
+
+## Pyenv
+
+```
+apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev
+
+curl -fsSL https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+v=3.5.2 | wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;pyenv install $v
+```
+
+## Pip加速
+
+```
+md ~/.pip
+
+echo &quot;[global]
+trusted-host =  mirrors.aliyun.com
+index-url = http://mirrors.aliyun.com/pypi/simple&quot; &gt; ~/.pip/pip.conf
+```
+
+## PyCharm
+
+- 下载地址: [PyCharm](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux)
+- 注册服务器: `http://idea.iteblog.com/key.php`
+
+## 自动化脚本
+
+ ```shell
+ cd ~/Desktop
+apt install git
+apt install zsh
+chsh -s $(which zsh)
+sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+
+echo export 'PATH=&quot;~/.pyenv/bin:$PATH&quot;
+eval &quot;$(pyenv init -)&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;'&gt;&gt;~/.zshrc
+source ~/.zshrc
+
+echo '[global]
+trusted-host =  mirrors.aliyun.com
+index-url = http://mirrors.aliyun.com/pypi/simple
+'&gt;~/.pip/pip.conf
+
+v=3.6.2
+wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;
+pyenv install $v
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+echo 'export NVM_DIR=&quot;$HOME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;'&gt;&gt;~/.zshrc
+source ~/.zshrc
+
+
+wget https://download.jetbrains.com/python/pycharm-professional-2017.2.3.tar.gz -P ~/Desktop
+wget https://www.google.com/chrome/browser/?platform=linux&amp;extra=devchannel -P ~/Desktop
+wget http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_amd64.deb -P ~/Desktop
+wget http://pinyin.sogou.com/linux/download.php?f=linux&amp;bit=64 -P ~/Desktop
+git clone https://github.com/yurtaev/idea-one-dark-theme
+git clone https://github.com/anmoljagetia/Flatabulous
+
+apt remove libreoffice-common
+apt remove unity-webapps-common
+apt remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot
+apt remove onboard deja-dup
+
+apt install rar
+apt install unity-tweak-tool
+add-repository ppa:noobslab/icons
+apt update
+apt install ultra-flat-icons
+apt install fonts-wqy-microhei
+apt install vim
+apt install nginx
+ ```</content><author><name>高久力</name></author><category term="Python" /><summary type="html">工欲善其事，必先利其器。既好用又好看的开发环境不仅让人工作愉快，还能提高质量和效率。</summary></entry><entry><title type="html">我的API开发规范</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/07/23/my-restful-api/" rel="alternate" type="text/html" title="我的API开发规范" /><published>2017-07-23T00:00:00+08:00</published><updated>2017-07-23T00:00:00+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/07/23/my-restful-api</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/2017/07/23/my-restful-api/">&gt; 想要缩短开发周期，提高开发效率，一套稳定可靠的规范是必不可少的。
+
+## 请求方法
+
+```python
+&quot;&quot;&quot;
+列表		GET         /resources/
+详情		GET         /resources/:id/
+创建		POST        /resources/:id/
+替换		PUT         /resources/:id/
+更新		PATCH       /resources/:id/
+删除		DELETE      /resources/:id/
+选项		OPTIONS     /resources/:id/
+&quot;&quot;&quot;
+```
+
+## 分页过滤
+
+```python
+&quot;&quot;&quot;
+GET /resources/:id/?limit={数量}&amp;
+                    offset={偏移量}&amp;
+                    search={查询关键词}&amp;
+                    condition1={过滤条件1}&amp;
+                    condition2={过滤条件2}&amp;
+                    fields=返回字段1,返回字段2
+&quot;&quot;&quot;
+```
+
+
+
+## 数据传输
+
+```python
+普通数据	&quot;application/json&quot;,
+文件上传	&quot;multipart/form-data&quot;
+```
+
+## 时间格式
+
+```python
+规范		&quot;ISO 8601&quot;
+结构		&quot;YYYY-MM-DDTHH:MM:SSZ&quot;
+案例		&quot;2017-09-05T08:23:51.464177Z&quot;
+```
+
+## 身份认证
+
+```python
+软件		&quot;Authorization: token :TOKEN&quot;
+网页		&quot;Cookie&quot;
+```
+
+## 返回状态
+
+```python
+&quot;&quot;&quot;
+200	请求成功
+201	创建成功
+400	参数错误
+401	未登录
+403	无权限
+404	未找到
+50X	服务器错误
+&quot;&quot;&quot;
+```
+
+## 后端依赖
+
+```
+django
+djangorestframework
+django-url-filter
+django-redis
+celery
+postgresql
+```
+
+## 后端部署
+
+```
+Ubuntu Server
+Nginx  &lt;----&gt; uWSGI &lt;----&gt; Django &lt;----&gt; Redis、PostgreSQL
+```</content><author><name>高久力</name></author><category term="后端" /><summary type="html">想要缩短开发周期，提高开发效率，一套稳定可靠的规范是必不可少的。</summary></entry></feed>
