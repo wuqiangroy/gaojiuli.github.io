@@ -2,6 +2,46 @@
 <search>
   
     <entry>
+      <title><![CDATA[Django Web API拟稿readme.md]]></title>
+      <url>/%E5%90%8E%E7%AB%AF/2017/10/12/thoughts-of-orm/</url>
+      <content type="html"><![CDATA[<h2 id="overview">Overview</h2>
+
+<p>I have repeated myself too many times and I don’t want do that any more.</p>
+
+<h2 id="usage">Usage</h2>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">resources</span> <span class="o">=</span> <span class="n">Resources</span><span class="p">()</span>
+<span class="n">resources</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'users'</span><span class="p">,</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">())</span>
+<span class="n">resources</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'blogs'</span><span class="p">,</span> <span class="n">Blog</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">())</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^api-auth/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'rest_framework.urls'</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s">'rest_framework'</span><span class="p">))]</span>
+</code></pre>
+</div>
+
+<h2 id="feature">Feature</h2>
+
+<ul>
+  <li>Automatically generates API.</li>
+  <li>Automatically generates API Documentation.</li>
+  <li>Automatically generates API Tests.</li>
+</ul>
+]]></content>
+      <categories>
+        
+          <category> 后端 </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 后端 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[我的开发环境搭建]]></title>
       <url>/%E5%90%8E%E7%AB%AF/2017/10/01/developer-environment-setting/</url>
       <content type="html"><![CDATA[<blockquote>
