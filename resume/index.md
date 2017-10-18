@@ -7,7 +7,8 @@ layout: page
 
 - 基本: 男/24/成都市高新区
 - 邮箱: gaojiuli@gmail.com
-- Github: https://github.com/gaojiuli
+- Github: [https://github.com/gaojiuli](https://github.com/gaojiuli)
+- 电话: 17628296258
 
 ## 目标职位
 
@@ -19,13 +20,13 @@ layout: page
 
 ## 工作经验
 
--  2016.07 - 至今 四川锦衣卫科技有限公司 Python开发工程师
-   -  设计数据库
-   -  开发后端接口
-   -  编写接口文档
-   -  开发网络爬虫
-   -  开发自动化脚本
-   -  服务器部署运维
+- 2016.07 - 至今 四川锦衣卫科技有限公司 Python开发工程师
+  - 设计数据库
+  - 开发后端接口
+  - 编写接口文档
+  - 开发网络爬虫
+  - 开发自动化脚本
+  - 服务器部署运维
 
 ## 项目经验
 
@@ -97,4 +98,3 @@ layout: page
 - 部署: Nginx、uWSGI、Gunicorn、Docker、Fabric
 - 爬虫: Scrapy、Requests、Fiddler、Charles、Selenium
 - 文档: Swagger、Sphinx、Markdown、MkDocs
-
